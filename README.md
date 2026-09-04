@@ -1,160 +1,340 @@
-<h1 align="center" style="position: relative;">
-  <br>
-    <img src="./assets/shoppy-x-ray.svg" alt="logo" width="200">
-  <br>
-  Shopify Skeleton Theme
-</h1>
+# Shopify Practice — Jewelry Commerce
 
-A minimal, carefully structured Shopify theme designed to help you quickly get started. Designed with modularity, maintainability, and Shopify's best practices in mind.
+A custom Shopify storefront built from Shopify's Skeleton Theme to practice and demonstrate professional Shopify theme development.
 
-<p align="center">
-  <a href="./LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
-  <a href="./actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Shopify/skeleton-theme/actions/workflows/ci.yml/badge.svg"></a>
-</p>
+This project is being developed as a hands-on Shopify learning project, with a focus on theme architecture, ecommerce UX, Shopify APIs, performance, accessibility, and maintainable frontend development.
 
-## Getting started
+> **Status:** 🚧 In development
 
-### Prerequisites
+---
 
-Before starting, ensure you have the latest Shopify CLI installed:
+## 🎯 Project Goals
 
-- [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) – helps you download, upload, preview themes, and streamline your workflows
+The goal of this project is to build a small but complete Shopify storefront while following a workflow similar to a real-world Shopify development project.
 
-If you use VS Code:
+The project will explore:
 
-- [Shopify Liquid VS Code Extension](https://shopify.dev/docs/storefronts/themes/tools/shopify-liquid-vscode) – provides syntax highlighting, linting, inline documentation, and auto-completion specifically designed for Liquid templates
+* Shopify theme architecture
+* Liquid
+* Sections and snippets
+* JSON templates
+* Shopify Theme Editor
+* Shopify CLI
+* Development stores
+* Responsive design
+* Ecommerce UX
+* Shopify product and collection data
+* Product variants
+* Search and filtering
+* Shopify Cart API
+* Section Rendering API
+* Shopify Storefront API / GraphQL
+* Metafields and metaobjects
+* Third-party integrations
+* Performance
+* Accessibility
+* SEO
+* Git/GitHub workflow
 
-### Clone
+---
 
-Clone this repository using Git or Shopify CLI:
+## 🛠️ Tech Stack
 
-```bash
-git clone git@github.com:Shopify/skeleton-theme.git
-# or
-shopify theme init
-```
+### Shopify
 
-### Preview
+* Shopify Themes
+* Liquid
+* Shopify CLI
+* Shopify Theme Editor
+* Shopify Cart API
+* Section Rendering API
+* Storefront API
+* GraphQL
+* Metafields
+* Metaobjects
 
-Preview this theme using Shopify CLI:
+### Frontend
 
-```bash
-shopify theme dev
-```
+* HTML
+* CSS
+* JavaScript
+* Liquid templating
 
-## Theme architecture
+### Development
 
-```bash
+* Git
+* GitHub
+* Shopify Development Store
+* Shopify Theme Check
+
+---
+
+## 🏗️ Planned Storefront
+
+The storefront will be built around a fictional jewelry ecommerce store.
+
+### Homepage
+
+Planned sections include:
+
+* Announcement bar
+* Header
+* Navigation
+* Hero
+* Featured collection
+* Product cards
+* Categories
+* Promotional banner
+* Editorial/content section
+* Footer
+
+The homepage will use Shopify sections and schema settings where appropriate so that content can be configured through the Theme Editor.
+
+### Collection
+
+Planned functionality:
+
+* Product grid
+* Product cards
+* Filtering
+* Sorting
+* Pagination
+* Responsive layout
+* Empty states
+* Variant handling
+
+### Product
+
+Planned functionality:
+
+* Product gallery
+* Product information
+* Price
+* Variant selector
+* Quantity selector
+* Add to cart
+* Loading states
+* Error handling
+* Success feedback
+
+### Cart
+
+Planned functionality:
+
+* Cart drawer
+* Add to cart
+* Update quantity
+* Remove items
+* Cart count
+* Dynamic cart updates
+* Section Rendering API
+
+---
+
+## 📁 Theme Architecture
+
+The project follows Shopify's theme architecture:
+
+```text
 .
-├── assets          # Stores static assets (CSS, JS, images, fonts, etc.)
-├── blocks          # Reusable, nestable, customizable UI components
-├── config          # Global theme settings and customization options
-├── layout          # Top-level wrappers for pages (layout templates)
-├── locales         # Translation files for theme internationalization
-├── sections        # Modular full-width page components
-├── snippets        # Reusable Liquid code or HTML fragments
-└── templates       # Templates combining sections to define page structures
+├── assets/
+├── blocks/
+├── config/
+├── layout/
+├── locales/
+├── sections/
+├── snippets/
+└── templates/
 ```
 
-To learn more, refer to the [theme architecture documentation](https://shopify.dev/docs/storefronts/themes/architecture).
+Some of the main concepts explored throughout the project will include:
 
-### Templates
+```text
+layout
+   ↓
+templates
+   ↓
+sections
+   ↓
+blocks / snippets
+   ↓
+Liquid + HTML + CSS + JavaScript
+```
 
-[Templates](https://shopify.dev/docs/storefronts/themes/architecture/templates#template-types) control what's rendered on each type of page in a theme.
+The architecture will evolve as the project grows.
 
-The Skeleton Theme scaffolds [JSON templates](https://shopify.dev/docs/storefronts/themes/architecture/templates/json-templates) to make it easy for merchants to customize their store.
+---
 
-None of the template types are required, and not all of them are included in the Skeleton Theme. Refer to the [template types reference](https://shopify.dev/docs/storefronts/themes/architecture/templates#template-types) for a full list.
+## 🔌 APIs & Integrations
 
-### Sections
+APIs and third-party services will only be introduced when they provide a meaningful use case for the storefront.
 
-[Sections](https://shopify.dev/docs/storefronts/themes/architecture/sections) are Liquid files that allow you to create reusable modules of content that can be customized by merchants. They can also include blocks which allow merchants to add, remove, and reorder content within a section.
+Potential areas of exploration include:
 
-Sections are made customizable by including a `{% schema %}` in the body. For more information, refer to the [section schema documentation](https://shopify.dev/docs/storefronts/themes/architecture/sections/section-schema).
+* Shopify Cart API
+* Section Rendering API
+* Storefront API
+* Shopify GraphQL
+* Product recommendations
+* Search
+* Reviews
+* External ecommerce services
 
-### Blocks
+The goal is not to artificially add technologies, but to understand when and why each approach is appropriate.
 
-[Blocks](https://shopify.dev/docs/storefronts/themes/architecture/blocks) let developers create flexible layouts by breaking down sections into smaller, reusable pieces of Liquid. Each block has its own set of settings, and can be added, removed, and reordered within a section.
+---
 
-Blocks are made customizable by including a `{% schema %}` in the body. For more information, refer to the [block schema documentation](https://shopify.dev/docs/storefronts/themes/architecture/blocks/theme-blocks/schema).
+## 📚 Learning Focus
 
-## Schemas
+This project is primarily focused on understanding how Shopify development works in a professional environment.
 
-When developing components defined by schema settings, we recommend these guidelines to simplify your code:
+Particular attention will be given to:
 
-- **Single property settings**: For settings that correspond to a single CSS property, use CSS variables:
+* Theme architecture
+* Liquid
+* Sections vs snippets
+* Theme Editor customization
+* Shopify data models
+* Product variants
+* Collections
+* Shopify filtering
+* AJAX interactions
+* Cart architecture
+* API usage
+* Metafields and metaobjects
+* Performance
+* Accessibility
+* Ecommerce best practices
 
-  ```liquid
-  <div class="collection" style="--gap: {{ block.settings.gap }}px">
-    ...
-  </div>
+---
 
-  {% stylesheet %}
-    .collection {
-      gap: var(--gap);
-    }
-  {% endstylesheet %}
+## 🚧 Project Roadmap
 
-  {% schema %}
-  {
-    "settings": [{
-      "type": "range",
-      "label": "gap",
-      "id": "gap",
-      "min": 0,
-      "max": 100,
-      "unit": "px",
-      "default": 0,
-    }]
-  }
-  {% endschema %}
-  ```
+### Phase 1 — Setup
 
-- **Multiple property settings**: For settings that control multiple CSS properties, use CSS classes:
+* [x] Create Shopify Development Store
+* [x] Initialize Skeleton Theme
+* [x] Initialize Git repository
+* [x] Create GitHub repository
+* [x] Configure `main` branch
+* [ ] Connect local theme to Development Store
 
-  ```liquid
-  <div class="collection {{ block.settings.layout }}">
-    ...
-  </div>
+### Phase 2 — Theme Architecture
 
-  {% stylesheet %}
-    .collection--full-width {
-      /* multiple styles */
-    }
-    .collection--narrow {
-      /* multiple styles */
-    }
-  {% endstylesheet %}
+* [ ] Explore `theme.liquid`
+* [ ] Understand templates
+* [ ] Understand sections
+* [ ] Understand snippets
+* [ ] Understand blocks
+* [ ] Configure global theme settings
 
-  {% schema %}
-  {
-    "settings": [{
-      "type": "select",
-      "id": "layout",
-      "label": "layout",
-      "values": [
-        { "value": "collection--full-width", "label": "t:options.full" },
-        { "value": "collection--narrow", "label": "t:options.narrow" }
-      ]
-    }]
-  }
-  {% endschema %}
-  ```
+### Phase 3 — Global UI
 
-## CSS & JavaScript
+* [ ] Announcement bar
+* [ ] Header
+* [ ] Navigation
+* [ ] Mobile navigation
+* [ ] Footer
+* [ ] Global styles
+* [ ] Responsive behavior
 
-For CSS and JavaScript, we recommend using the [`{% stylesheet %}`](https://shopify.dev/docs/api/liquid/tags#stylesheet) and [`{% javascript %}`](https://shopify.dev/docs/api/liquid/tags/javascript) tags. They can be included multiple times, but the code will only appear once.
+### Phase 4 — Homepage
 
-### `critical.css`
+* [ ] Hero section
+* [ ] Featured collection
+* [ ] Product cards
+* [ ] Category section
+* [ ] Promotional banner
+* [ ] Editorial section
 
-The Skeleton Theme explicitly separates essential CSS necessary for every page into a dedicated `critical.css` file.
+### Phase 5 — Collection
 
-## Contributing
+* [ ] Product grid
+* [ ] Filtering
+* [ ] Sorting
+* [ ] Pagination
+* [ ] Empty states
+* [ ] Responsive collection layout
 
-We're excited for your contributions to the Skeleton Theme! This repository aims to remain as lean, lightweight, and fundamental as possible, and we kindly ask your contributions to align with this intention.
+### Phase 6 — Product
 
-Visit our [CONTRIBUTING.md](./CONTRIBUTING.md) for a detailed overview of our process, guidelines, and recommendations.
+* [ ] Product gallery
+* [ ] Variant selector
+* [ ] Quantity selector
+* [ ] Add to cart
+* [ ] Loading/error states
 
-## License
+### Phase 7 — Cart
 
-Skeleton Theme is open-sourced under the [MIT](./LICENSE.md) License.
+* [ ] Cart drawer
+* [ ] Add item
+* [ ] Update quantity
+* [ ] Remove item
+* [ ] Cart count
+* [ ] Section Rendering API
+
+### Phase 8 — Advanced Shopify
+
+* [ ] Search
+* [ ] Product recommendations
+* [ ] Metafields
+* [ ] Metaobjects
+* [ ] Storefront API
+* [ ] GraphQL
+* [ ] Third-party integration
+
+### Phase 9 — Production Quality
+
+* [ ] Accessibility audit
+* [ ] Performance optimization
+* [ ] SEO
+* [ ] Theme Check
+* [ ] Responsive testing
+* [ ] Error handling
+* [ ] Final UX polish
+
+---
+
+## 📌 Project Philosophy
+
+The project is being developed as a guided professional practice rather than a tutorial.
+
+For each feature, the development process will focus on:
+
+```text
+Requirement
+    ↓
+Architecture / approach
+    ↓
+Implementation
+    ↓
+Debugging
+    ↓
+Testing
+    ↓
+Optimization
+    ↓
+Documentation
+```
+
+When Shopify provides a native solution, it will generally be preferred over recreating the same functionality with unnecessary JavaScript.
+
+The objective is to understand not only **how** to implement Shopify features, but also **when and why** to use each approach.
+
+---
+
+## 👨‍💻 About
+
+Built by **Facundo Robert**, Frontend Developer from Argentina.
+
+Primary frontend technologies:
+
+* React
+* Next.js
+* TypeScript
+* JavaScript
+* HTML
+* CSS
+* Tailwind CSS
+
+This project represents a focused exploration of Shopify development and ecommerce frontend engineering.

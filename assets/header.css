@@ -13,7 +13,7 @@
   inset: 0;
   z-index: 0;
 
-  background-color: rgba(255, 255, 255, 0.519);
+  background-color: rgba(255, 255, 255, 0.211);
 
   transform: translateY(-100%);
   transition: transform 0.8s ease;
@@ -105,7 +105,7 @@
 
 .header__title a {
   text-decoration: none;
-  color: var(--color-foreground);
+  color: black;
 }
 
 .header-desktop {

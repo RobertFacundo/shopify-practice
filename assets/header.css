@@ -1,0 +1,77 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.header__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-color: red;
+
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+.header:hover .header__background {
+  transform: translateY(0);
+}
+
+.header__top,
+.header__navigation {
+  position: relative;
+  z-index: 1;
+}
+
+.header__top {
+  width: 100%;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.header__actions a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__actions a sup {
+  position: absolute;
+  left: 100%;
+  overflow: hidden;
+  max-width: var(--page-margin);
+}
+
+.header__actions svg {
+  width: 2rem;
+}
+
+.header__navigation {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.header__title {
+}

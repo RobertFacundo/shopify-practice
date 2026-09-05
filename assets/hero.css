@@ -17,14 +17,15 @@
   align-items: center;
   text-align: center;
   max-width: 1600px;
-  margin-left: 12rem;
-  gap: 2rem;
+  margin-left: 6rem;
+  gap: 1rem;
 }
 
 .hero__content h1 {
   margin: 0;
   font-family: var(--font-primary--family);
-  font-size: 4.5rem;
+  color: rgba(0, 0, 0, 0.778);
+  font-size: 4rem;
   font-weight: 400;
   letter-spacing: 0.05rem;
 }
@@ -32,10 +33,12 @@
 .hero__content p {
   margin: 1.5rem 0 2rem;
   font-family: var(--font-primary--family);
+  color: rgba(0, 0, 0, 0.727);
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.6;
-  max-width: 500px;
+  max-width: 700px;
+  letter-spacing: 0.5px;
 }
 
 .hero__content a {
@@ -46,17 +49,20 @@
   padding: 0.9rem 2.5rem;
 
   font-family: var(--font-primary--family);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 400;
-  letter-spacing: 0.08rem;
+  letter-spacing: 0.12rem;
   text-decoration: none;
 
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: transparent;
 
-  transition: opacity 0.3s ease;
+  border: 1px solid black;
+
+  transition: background-color 0.7s ease, color 0.8s ease;
 }
 
 .hero__content a:hover {
-  opacity: 0.75;
+  background-color: black;
+  color: rgba(255, 255, 255, 0.769);
 }

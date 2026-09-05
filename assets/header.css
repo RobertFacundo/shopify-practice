@@ -13,7 +13,7 @@
   inset: 0;
   z-index: 0;
 
-  background-color: rgba(255, 255, 255, 0.211);
+  background-color: rgba(255, 255, 255, 0.164);
 
   transform: translateY(-100%);
   transition: transform 0.8s ease;
@@ -67,11 +67,12 @@
 .header__navigation {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  gap: 3rem;
+  gap: 8rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
+  padding-left: 15rem;
 }
 
 .header__navigation a {
@@ -100,7 +101,7 @@
 
 .header__title {
   font-size: 55px;
-  margin-left: 8rem;
+  margin-left: 1rem;
 }
 
 .header__title a {

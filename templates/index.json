@@ -11,7 +11,13 @@
   "sections": {
     "main": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/NoteGPT_Image_20260904224821.png",
+        "title": "Discover Bijou",
+        "description": "Timeless pieces designed to complement every moment.",
+        "button_label": "Shop now",
+        "button_link": ""
+      }
     }
   },
   "order": [

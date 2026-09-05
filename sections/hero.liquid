@@ -1,0 +1,56 @@
+<section
+  class="hero full-width"
+  {% if section.settings.image %}
+    style="background-image: url('{{ section.settings.image | image_url: width: 2400 }}');"
+  {% endif %}
+>
+  <div class="hero__content">
+    <h1>
+      {{ section.settings.title }}
+    </h1>
+
+    <p>
+      {{ section.settings.description }}
+    </p>
+
+    <a href="{{ section.settings.button_link }}">
+      {{ section.settings.button_label }}
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Discover Bijou"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Timeless pieces designed to complement every moment."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ]
+}
+{% endschema %}

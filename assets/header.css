@@ -13,10 +13,10 @@
   inset: 0;
   z-index: 0;
 
-  background-color: red;
+  background-color: rgba(255, 255, 255, 0.519);
 
   transform: translateY(-100%);
-  transition: transform 0.4s ease;
+  transition: transform 0.8s ease;
 }
 
 .header:hover .header__background {
@@ -41,6 +41,7 @@
 .header__actions {
   display: flex;
   gap: 1rem;
+  margin-right: 25px;
 }
 
 .header__actions a {
@@ -60,7 +61,7 @@
 }
 
 .header__actions svg {
-  width: 2rem;
+  width: 2.5rem;
 }
 
 .header__navigation {
@@ -68,10 +69,59 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 3rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
 
+.header__navigation a {
+  font-family: var(--font-primary--family);
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: 0.1rem;
+  color: var(--color-foreground);
+  position: relative;
+}
+
+.header__navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1.7px;
+  background-color: currentColor;
+  transition: width 0.6s ease;
+}
+
+.header__navigation a:hover::after {
+  width: 100%;
+}
+
 .header__title {
+  font-size: 55px;
+  margin-left: 8rem;
+}
+
+.header__title a {
+  text-decoration: none;
+  color: var(--color-foreground);
+}
+
+.header-desktop {
+  display: block;
+}
+
+.header-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 749px) {
+  .header-desktop {
+    display: none;
+  }
+
+  .header-mobile {
+    display: block;
+  }
 }

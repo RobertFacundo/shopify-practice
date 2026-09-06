@@ -16,20 +16,46 @@
         "title": "Timeless elegance",
         "description": "Jewelry designed to become part of your story.",
         "button_label": "Shop now",
-        "button_link": ""
+        "button_link": "",
+        "title_font": "kaisei_decol_n4"
       }
     },
     "featured": {
       "type": "featured",
       "settings": {
-        "title": "Featured Products",
-        "collection": "featured"
+        "collection": "featured",
+        "title": "Featured Products"
       }
     },
     "categories": {
       "type": "categories",
+      "blocks": {
+        "collection_U37MdL": {
+          "type": "collection",
+          "settings": {
+            "collection": "necklaces"
+          }
+        },
+        "collection_R4CBVC": {
+          "type": "collection",
+          "settings": {
+            "collection": "earrings"
+          }
+        },
+        "collection_GjxyjY": {
+          "type": "collection",
+          "settings": {
+            "collection": "bracelets"
+          }
+        }
+      },
+      "block_order": [
+        "collection_U37MdL",
+        "collection_R4CBVC",
+        "collection_GjxyjY"
+      ],
       "settings": {
-      "title": "Shop by category"
+        "title": "Shop by category"
       }
     }
   },

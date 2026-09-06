@@ -47,7 +47,7 @@
 }
 
 .header-mobile__title a {
-  color: var(--color-foreground);
+  color: black;
   text-decoration: none;
 }
 

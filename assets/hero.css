@@ -66,3 +66,28 @@
   background-color: rgba(0, 0, 0, 0.853);
   color: rgba(255, 255, 255, 0.769);
 }
+
+@media screen and (max-width: 749px) {
+  .hero {
+    justify-content: flex-start;
+    background-position: center top;
+  }
+
+  .hero__content {
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 0;
+    padding: 0 1.25rem;
+    max-width: 100%;
+  }
+
+  .hero__content h1 {
+    font-size: 2.7rem;
+    width: 95%;
+  }
+
+  .hero__content p {
+    font-size: 1rem;
+    max-width: 70%;
+  }
+}

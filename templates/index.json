@@ -18,9 +18,16 @@
         "button_label": "Shop now",
         "button_link": ""
       }
+    },
+      "featured": {
+      "type": "featured",
+      "settings": {
+        "title": "Featured Products"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "featured"
   ]
 }

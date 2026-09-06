@@ -1,0 +1,26 @@
+{{ 'featured.css' | asset_url | stylesheet_tag }}
+
+<section class="featured">
+  <h1>{{ section.settings.title }}</h1>
+
+  <p>{{ section.settings.collection.title }}</p>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Featured Products"
+    }
+  ]
+}
+{% endschema %}

@@ -19,15 +19,23 @@
         "button_link": ""
       }
     },
-      "featured": {
+    "featured": {
       "type": "featured",
       "settings": {
-        "title": "Featured Products"
+        "title": "Featured Products",
+        "collection": "featured"
+      }
+    },
+    "categories": {
+      "type": "categories",
+      "settings": {
+      "title": "Shop by category"
       }
     }
   },
   "order": [
     "main",
-    "featured"
+    "featured",
+    "categories"
   ]
 }

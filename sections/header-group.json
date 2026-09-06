@@ -13,10 +13,14 @@
   "sections": {
     "header": {
       "type": "header",
-      "settings": {}
+      "settings": {
+        "menu": "main-menu",
+        "customer_account_menu": "customer-account-main-menu",
+        "title_font": "kaisei_decol_n4"
+      }
     }
   },
   "order": [
     "header"
-  ],
+  ]
 }

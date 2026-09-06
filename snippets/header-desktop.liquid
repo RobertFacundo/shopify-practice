@@ -1,0 +1,35 @@
+<header class="header header-desktop full-width">
+  <div class="header__background"></div>
+
+  <div class="header__top">
+    <div class="header__search">
+      <!-- Search futuro -->
+    </div>
+
+    <h2 class="header__title">
+      <a href="{{ routes.root_url }}">Bijou</a>
+    </h2>
+
+    <div class="header__actions">
+      {% if shop.customer_accounts_enabled %}
+        <shopify-account menu="{{ customer_account_menu }}">
+          {{ 'icon-account.svg' | inline_asset_content }}
+        </shopify-account>
+      {% endif %}
+
+      <a href="{{ routes.cart_url }}">
+        {% if cart.item_count > 0 %}
+          <sup>{{ cart.item_count }}</sup>
+        {% endif %}
+
+        {{ 'icon-cart.svg' | inline_asset_content }}
+      </a>
+    </div>
+  </div>
+
+  <nav class="header__navigation">
+    {% for link in menu.links %}
+      {{ link.title | link_to: link.url }}
+    {% endfor %}
+  </nav>
+</header>

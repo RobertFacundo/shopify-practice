@@ -1,42 +1,26 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
+{{ 'header-mobile.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'header.js'| asset_url }}" defer></script>
 
-<header class="header full-width">
-   <div class="header__background"></div>
-  <div class="header__top">
-    
-    <div class="header__currency">
-      <!-- Currency futuro -->
-    </div>
+<style>
+  {{ section.settings.title_font | font_face }}
 
-    <h2 class="header__title">
-       <a href="{{ routes.root_url }}">Bijou</a>
-    </h2>
+  .header__title, .header-mobile__title a {
+    font-family: {{ section.settings.title_font.family }};
+    font-style: {{ section.settings.title_font.style }};
+    font-weight: {{ section.settings.title_font.weight }};
+  }
+</style>
 
-    <div class="header__actions">
-      {% if shop.customer_accounts_enabled %}
-        <shopify-account menu="{{ section.settings.customer_account_menu }}">
-          {{ 'icon-account.svg' | inline_asset_content }}
-        </shopify-account>
-      {% endif %}
+{% render 'header-desktop',
+  menu: section.settings.menu,
+  customer_account_menu: section.settings.customer_account_menu
+%}
 
-      <a href="{{ routes.cart_url }}">
-        {% if cart.item_count > 0 %}
-          <sup>{{ cart.item_count }}</sup>
-        {% endif %}
-
-        {{ 'icon-cart.svg' | inline_asset_content }}
-      </a>
-    </div>
-
-  </div>
-
-  <nav class="header__navigation">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
-  </nav>
-</header>
-
+{% render 'header-mobile',
+  menu: section.settings.menu,
+  customer_account_menu: section.settings.customer_account_menu
+%}
 
 {% schema %}
 {
@@ -52,6 +36,12 @@
       "id": "customer_account_menu",
       "label": "t:labels.customer_account_menu",
       "default": "customer-account-main-menu"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title font",
+      "default": "assistant_n4"
     }
   ]
 }

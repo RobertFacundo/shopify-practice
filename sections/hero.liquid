@@ -1,0 +1,74 @@
+{{ 'hero.css' | asset_url | stylesheet_tag }}
+
+<style>
+  {{ section.settings.title_font | font_face }}
+
+  .hero__content h1 {
+    font-family: {{ section.settings.title_font.family }};
+    font-style: {{ section.settings.title_font.style }};
+    font-weight: {{ section.settings.title_font.weight }};
+  }
+</style>
+
+<section
+  class="hero full-width"
+  {% if section.settings.image %}
+    style="background-image: url('{{ section.settings.image | image_url: width: 2400 }}');"
+  {% endif %}
+>
+  <div class="hero__content">
+    <h1>
+      {{ section.settings.title }}
+    </h1>
+
+    <p>
+      {{ section.settings.description }}
+    </p>
+
+    <a href="{{ section.settings.button_link }}">
+      {{ section.settings.button_label }}
+    </a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Timeless elegance"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Jewelry designed to become part of your story."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "font_picker",
+      "id": "title_font",
+      "label": "Title font",
+      "default": "kaisei_decol_n4"
+    }
+  ]
+}
+{% endschema %}

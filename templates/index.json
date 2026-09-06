@@ -10,11 +10,24 @@
 {
   "sections": {
     "main": {
-      "type": "hello-world",
-      "settings": {}
+      "type": "hero",
+      "settings": {
+        "image": "shopify://shop_images/NoteGPT_Image_20260904224821.png",
+        "title": "Timeless elegance",
+        "description": "Jewelry designed to become part of your story.",
+        "button_label": "Shop now",
+        "button_link": ""
+      }
+    },
+      "featured": {
+      "type": "featured",
+      "settings": {
+        "title": "Featured Products"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "featured"
   ]
 }

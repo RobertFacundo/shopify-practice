@@ -1,0 +1,41 @@
+<header class="header-mobile">
+  <div class="header-mobile__top">
+    <button class="header-mobile__menu" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <h2 class="header-mobile__title">
+      <a href="{{ routes.root_url }}">Bijou</a>
+    </h2>
+
+    <a class="header-mobile__search" href="#" aria-label="Search">
+      {{ 'icon-search.svg' | inline_asset_content }}
+    </a>
+  </div>
+
+  <nav class="header-mobile__navigation">
+    <div class="header-mobile__links">
+      {% for link in menu.links %}
+        {{ link.title | link_to: link.url }}
+      {% endfor %}
+    </div>
+
+    <div class="header-mobile__actions">
+      {% if shop.customer_accounts_enabled %}
+        <shopify-account menu="{{ customer_account_menu }}">
+          {{ 'icon-account.svg' | inline_asset_content }}
+        </shopify-account>
+      {% endif %}
+
+      <a href="{{ routes.cart_url }}" aria-label="Cart">
+        {% if cart.item_count > 0 %}
+          <sup>{{ cart.item_count }}</sup>
+        {% endif %}
+
+        {{ 'icon-cart.svg' | inline_asset_content }}
+      </a>
+    </div>
+  </nav>
+</header>

@@ -1,6 +1,5 @@
 .featured {
   padding: 3rem 2rem;
-  height: 400px;
 }
 
 .featured h1 {
@@ -14,4 +13,10 @@
   margin: 0;
   font-family: var(--font-primary--family);
   font-size: 1.1rem;
+}
+
+.featured__products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }

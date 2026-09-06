@@ -1,0 +1,47 @@
+{{ 'categories.css' | asset_url | stylesheet_tag }}
+
+<section class="categories">
+  <h2 class="categories__title">
+    {{ section.settings.title }}
+  </h2>
+
+  <div class="categories__grid">
+    {% for block in section.blocks %}
+      {% if block.settings.collection %}
+        {% render 'collection-card', collection: block.settings.collection %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Shop by category"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Categories"
+    }
+  ]
+}
+{% endschema %}

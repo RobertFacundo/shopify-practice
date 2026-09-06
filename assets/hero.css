@@ -57,12 +57,37 @@
   color: black;
   background-color: transparent;
 
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.31);
 
   transition: background-color 0.7s ease, color 0.8s ease;
 }
 
 .hero__content a:hover {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.853);
   color: rgba(255, 255, 255, 0.769);
+}
+
+@media screen and (max-width: 749px) {
+  .hero {
+    justify-content: flex-start;
+    background-position: center top;
+  }
+
+  .hero__content {
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 1.5rem;
+    padding: 0 1.25rem;
+    max-width: 100%;
+  }
+
+  .hero__content h1 {
+    font-size: 2.6rem;
+    max-width: 90%;
+  }
+
+  .hero__content p {
+    font-size: 1rem;
+    max-width: 70%;
+  }
 }

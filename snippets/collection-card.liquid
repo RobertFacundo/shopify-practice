@@ -1,6 +1,9 @@
 {{ 'collection-card.css' | asset_url | stylesheet_tag }}
 
 <a class="collection-card" href="{{ collection.url }}">
+
+  <div class="collection-card__background"></div>
+
   <div class="collection-card__media">
     {% if image %}
       {{ image | image_url: width: 900 | image_tag }}
@@ -8,6 +11,8 @@
   </div>
 
   <div class="collection-card__content">
-    <h3 class="collection-card__title">{{ collection.title }}</h3>
+    <h3 class="collection-card__title">
+      {{ collection.title }}
+    </h3>
   </div>
 </a>

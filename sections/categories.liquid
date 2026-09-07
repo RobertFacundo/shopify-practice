@@ -1,14 +1,29 @@
 {{ 'categories.css' | asset_url | stylesheet_tag }}
 
-<section class="categories">
-  <h2 class="categories__title">
-    {{ section.settings.title }}
-  </h2>
+<section class="categories full-width">
+  <div class="categories__content">
+    <span class="categories__eyebrow">
+      {{ section.settings.eyebrow }}
+    </span>
+
+    <h2 class="categories__title">
+      {{ section.settings.title }}
+    </h2>
+
+    {% if section.settings.button_link %}
+      <a
+        class="categories__cta"
+        href="{{ section.settings.button_link }}"
+      >
+        {{ section.settings.button_label }}
+      </a>
+    {% endif %}
+  </div>
 
   <div class="categories__grid">
     {% for block in section.blocks %}
       {% if block.settings.collection %}
-        {% render 'collection-card', collection: block.settings.collection, image: block.settings.image%}
+        {% render 'collection-card', collection: block.settings.collection, image: block.settings.image %}
       {% endif %}
     {% endfor %}
   </div>
@@ -20,9 +35,26 @@
   "settings": [
     {
       "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Explore"
+    },
+    {
+      "type": "text",
       "id": "title",
       "label": "Title",
       "default": "Shop by category"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "View all"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
     }
   ],
   "blocks": [

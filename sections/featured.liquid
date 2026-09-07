@@ -1,13 +1,39 @@
 {{ 'featured.css' | asset_url | stylesheet_tag }}
 
 <section class="featured">
-  <h1>{{ section.settings.title }}</h1>
+
+  <div class="featured__content">
+    <span class="featured__eyebrow">
+      Featured pieces
+    </span>
+
+    <h1 class="featured__title">
+      {{ section.settings.title }}
+    </h1>
+
+    <div class="featured__navigation">
+      <button class="featured__arrow featured__arrow--prev" type="button">
+        ←
+      </button>
+
+      <button class="featured__arrow featured__arrow--next" type="button">
+        →
+      </button>
+    </div>
+  </div>
+
+  <div class="featured__image">
+    {% if section.settings.image %}
+    {{ section.settings.image | image_url: width: 1200 | image_tag }}
+  {% endif %}
+  </div>
 
   <div class="featured__products">
-  {% for product in section.settings.collection.products %}
-    {% render 'product-card', product: product %}
-  {% endfor %}
-</div>
+    {% for product in section.settings.collection.products %}
+      {% render 'featured-product-card', product: product %}
+    {% endfor %}
+  </div>
+
 </section>
 
 {% schema %}
@@ -24,7 +50,12 @@
       "id": "title",
       "label": "Title",
       "default": "Featured Products"
-    }
+    },
+    {
+  "type": "image_picker",
+  "id": "image",
+  "label": "Center image"
+}
   ]
 }
 {% endschema %}

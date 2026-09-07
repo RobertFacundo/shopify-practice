@@ -33,19 +33,22 @@
         "collection_U37MdL": {
           "type": "collection",
           "settings": {
-            "collection": "necklaces"
+            "collection": "necklaces",
+            "image": "shopify://shop_images/necklaces.png"
           }
         },
         "collection_R4CBVC": {
           "type": "collection",
           "settings": {
-            "collection": "earrings"
+            "collection": "earrings",
+            "image": "shopify://shop_images/earrings.png"
           }
         },
         "collection_GjxyjY": {
           "type": "collection",
           "settings": {
-            "collection": "bracelets"
+            "collection": "bracelets",
+            "image": "shopify://shop_images/bracelets.png"
           }
         }
       },

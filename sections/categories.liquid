@@ -8,7 +8,7 @@
   <div class="categories__grid">
     {% for block in section.blocks %}
       {% if block.settings.collection %}
-        {% render 'collection-card', collection: block.settings.collection %}
+        {% render 'collection-card', collection: block.settings.collection, image: block.settings.image%}
       {% endif %}
     {% endfor %}
   </div>
@@ -34,6 +34,11 @@
           "type": "collection",
           "id": "collection",
           "label": "Collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Category image"
         }
       ]
     }

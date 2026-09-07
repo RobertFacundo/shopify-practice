@@ -2,10 +2,8 @@
 
 <a class="collection-card" href="{{ collection.url }}">
   <div class="collection-card__media">
-    {% if collection.image %}
-      {{ collection.image | image_url: width: 900 | image_tag }}
-    {% elsif collection.products.first.featured_image %}
-      {{ collection.products.first.featured_image | image_url: width: 900 | image_tag }}
+    {% if image %}
+      {{ image | image_url: width: 900 | image_tag }}
     {% endif %}
   </div>
 

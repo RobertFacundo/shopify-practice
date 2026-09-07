@@ -1,6 +1,6 @@
 .featured {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-columns: 1fr 2.5fr 1fr;
   min-height: 700px;
   padding: 5rem 4rem;
   gap: 3rem;

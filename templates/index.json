@@ -24,7 +24,8 @@
       "type": "featured",
       "settings": {
         "collection": "featured",
-        "title": "Featured Products"
+        "title": "Featured Products",
+        "image": "shopify://shop_images/pngtree_1788792261718_NoteGPT_Image_20260907111457.png"
       }
     },
     "categories": {

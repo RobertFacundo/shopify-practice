@@ -326,3 +326,38 @@ footer {
   width: 2.5rem;
   height: auto;
 }
+
+@media screen and (max-width: 749px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 3rem 1.25rem;
+  }
+
+  .footer-content__about,
+  .footer-content__image,
+  .footer-content__contact,
+  .footer-content__navigation {
+    padding: 1.5rem 0;
+  }
+
+  .footer-content__image {
+    display: none;
+  }
+
+  .footer-content-third-column {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .footer-content__contact,
+  .footer-content__navigation {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-about-me {
+    padding: 1.5rem 0;
+    max-width: none;
+  }
+}

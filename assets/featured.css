@@ -115,3 +115,18 @@
   visibility: visible;
   transform: translateX(0);
 }
+
+@media screen and (max-width: 749px) {
+  .featured {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .featured__image {
+    display: none;
+  }
+  .featured__content {
+    align-items: center;
+    text-align: center;
+  }
+}

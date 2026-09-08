@@ -48,7 +48,7 @@
       <h2>
         {{ contact_title }}
       </h2>
-    
+
       {% if github_url %}
         <a href="{{ github_url }}" aria-label="GitHub">
           <svg
@@ -60,11 +60,11 @@
               d="M12 2C6.48 2 2 6.58 2 12.24c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.22-3.37-1.22-.46-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.58 2.35 1.12 2.92.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.15-4.55-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.2 9.2 0 0 1 12 8.16c.85 0 1.7.12 2.5.36 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.92-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .27.18.59.69.49A10.25 10.25 0 0 0 22 12.24C22 6.58 17.52 2 12 2Z"
             />
           </svg>
-    
+
           {{ github_label }}
         </a>
       {% endif %}
-    
+
       {% if linkedin_url %}
         <a href="{{ linkedin_url }}" aria-label="LinkedIn">
           <svg
@@ -76,11 +76,11 @@
               d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.48v6.28ZM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14ZM3.54 20.45H7.1V8.98H3.54v11.47ZM22.22 0H1.78C.8 0 0 .8 0 1.78v20.44C0 23.2.8 24 1.78 24h20.44c.98 0 1.78-.8 1.78-1.78V1.78C24 .8 23.2 0 22.22 0Z"
             />
           </svg>
-    
+
           {{ linkedin_label }}
         </a>
       {% endif %}
-    
+
       {% if portfolio_url %}
         <a href="{{ portfolio_url }}" aria-label="Portfolio">
           <svg
@@ -92,29 +92,28 @@
               d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3ZM5 5h5v2H7v10h10v-3h2v5H5V5Z"
             />
           </svg>
-    
+
           {{ portfolio_label }}
         </a>
       {% endif %}
     </div>
     <div class="footer-content__navigation">
       <h2>Navigation</h2>
-    
+
       {% for link in menu.links %}
         <a href="{{ link.url }}">
           {{ link.title }}
         </a>
       {% endfor %}
     </div>
-   <div class="footer-about-me">
-  <h2>About me</h2>
+    <div class="footer-about-me">
+      <h2>About me</h2>
 
-  <p>
-    I'm a Frontend Developer from Argentina, currently deepening my
-    Shopify skills through hands-on projects and ecommerce development.
-    I'm looking for my first professional opportunity to keep growing,
-    contribute to real-world products, and continue learning along the way.
-  </p>
-</div>
+      <p>
+        I'm a Frontend Developer from Argentina, currently deepening my Shopify skills through hands-on projects and
+        ecommerce development. I'm looking for my first professional opportunity to keep growing, contribute to
+        real-world products, and continue learning along the way.
+      </p>
+    </div>
   </div>
 </div>

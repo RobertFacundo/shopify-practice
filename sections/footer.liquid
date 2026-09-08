@@ -1,46 +1,115 @@
-<footer>
-  <div class="footer__copyright">
-    &copy;
-    {{ 'now' | date: '%Y' }}
-    {{ shop.name | link_to: routes.root_url }}, {{ powered_by_link }}
-  </div>
+{{ 'footer.css' | asset_url | stylesheet_tag }}
 
-  <div class="footer__links">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
-  </div>
+<footer class="full-width">
+  {% render 'footer-content',
+    about_title: section.settings.about_title,
+    about_description: section.settings.about_description,
+    image: section.settings.image,
+    contact_title: section.settings.contact_title,
+    github_label: section.settings.github_label,
+    github_url: section.settings.github_url,
+    linkedin_label: section.settings.linkedin_label,
+    linkedin_url: section.settings.linkedin_url,
+    portfolio_label: section.settings.portfolio_label,
+    portfolio_url: section.settings.portfolio_url,
+     menu: section.settings.menu
+  %}
 
-  <div class="footer__payment">
-    {% if section.settings.show_payment_icons %}
-      {% for type in shop.enabled_payment_types %}
-        {{ type | payment_type_svg_tag }}
-      {% endfor %}
-    {% endif %}
+  <div class="footer__bottom">
+    <div class="footer__copyright">
+      &copy;
+      {{ 'now' | date: '%Y' }}
+      {{ shop.name | link_to: routes.root_url }}, {{ powered_by_link }}
+    </div>
+
+    <div class="footer__payment">
+      {% if section.settings.show_payment_icons %}
+        {% for type in shop.enabled_payment_types %}
+          {{ type | payment_type_svg_tag }}
+        {% endfor %}
+      {% endif %}
+    </div>
   </div>
 </footer>
 
-{% stylesheet %}
-  footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-  }
-  footer a {
-    text-decoration: none;
-    color: var(--color-foreground);
-  }
-  footer .footer__links,
-  footer .footer__payment {
-    display: flex;
-    gap: 1rem;
-  }
-{% endstylesheet %}
+
 
 {% schema %}
 {
   "name": "t:general.footer",
   "settings": [
+    {
+      "type": "header",
+      "content": "About"
+    },
+    {
+      "type": "text",
+      "id": "about_title",
+      "label": "Title",
+      "default": "Bijou"
+    },
+    {
+      "type": "textarea",
+      "id": "about_description",
+      "label": "Description",
+      "default": "Shopify theme designed for educational and demonstration purposes."
+    },
+    {
+      "type": "header",
+      "content": "Center image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Contact"
+    },
+    {
+      "type": "text",
+      "id": "contact_title",
+      "label": "Title",
+      "default": "Contact"
+    },
+    {
+      "type": "text",
+      "id": "github_label",
+      "label": "GitHub label",
+      "default": "GitHub"
+    },
+    {
+      "type": "url",
+      "id": "github_url",
+      "label": "GitHub URL"
+    },
+    {
+      "type": "text",
+      "id": "linkedin_label",
+      "label": "LinkedIn label",
+      "default": "LinkedIn"
+    },
+    {
+      "type": "url",
+      "id": "linkedin_url",
+      "label": "LinkedIn URL"
+    },
+    {
+      "type": "text",
+      "id": "portfolio_label",
+      "label": "Portfolio label",
+      "default": "Portfolio"
+    },
+    {
+      "type": "url",
+      "id": "portfolio_url",
+      "label": "Portfolio URL"
+    },
+    {
+      "type": "header",
+      "content": "Footer bottom"
+    },
     {
       "type": "link_list",
       "id": "menu",

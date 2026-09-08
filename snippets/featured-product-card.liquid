@@ -1,0 +1,38 @@
+{{ 'featured-product-card.css' | asset_url | stylesheet_tag }}
+
+<article class="featured-product-card">
+  <div class="featured-product-card__background"></div>
+
+  <a
+    class="featured-product-card__media"
+    href="{{ product.url }}"
+  >
+    {% if product.featured_image %}
+      {{ product.featured_image
+        | image_url: width: 600
+        | image_tag
+      }}
+    {% endif %}
+  </a>
+
+  <div class="featured-product-card__content">
+    <a
+      class="featured-product-card__title"
+      href="{{ product.url }}"
+    >
+      {{ product.title }}
+    </a>
+
+    <span class="featured-product-card__price">
+      {{ product.price | money }}
+    </span>
+  </div>
+
+  <a
+    class="featured-product-card__cta"
+    href="{{ product.url }}"
+  >
+    Shop →
+  </a>
+
+</article>

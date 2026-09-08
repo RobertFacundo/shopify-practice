@@ -14,7 +14,17 @@
     "footer": {
       "type": "footer",
       "settings": {
-        "menu": "",
+        "about_title": "Bijou",
+        "about_description": "Shopify theme designed for educational and demonstration purposes.",
+        "image": "shopify://shop_images/footer-img.png",
+        "contact_title": "Contact",
+        "github_label": "GitHub",
+        "github_url": "https://github.com/RobertFacundo",
+        "linkedin_label": "LinkedIn",
+        "linkedin_url": "https://www.linkedin.com/in/robertfacundodev/",
+        "portfolio_label": "Portfolio",
+        "portfolio_url": "https://robertcoder.vercel.app/",
+        "menu": "main-menu",
         "show_payment_icons": true
       }
     }

@@ -30,9 +30,10 @@ window.addEventListener('popstate', () => {
   const section = document.querySelector('.collection')
   const sectionId = section.dataset.sectionId
 
-  const url = `${window.location.href}&section_id=${sectionId}`
+  const url = new URL(window.location.href)
+  url.searchParams.set('section_id', sectionId)
   console.log(window.location.href)
-  console.log(url)
+  console.log(url.toString())
 
   fetch(url)
     .then(response => response.text())

@@ -1,0 +1,28 @@
+{% comment %}
+  Reusable product card for collection and catalog grids.
+{% endcomment %}
+
+{{ 'product-card.css' | asset_url | stylesheet_tag }}
+
+<article class="product-card">
+  <a class="product-card__media" href="{{ product.url }}">
+    {% if product.featured_image %}
+      {{ product.featured_image
+        | image_url: width: 800
+        | image_tag
+      }}
+    {% endif %}
+  </a>
+
+  <div class="product-card__content">
+    <h2 class="product-card__title">
+      <a href="{{ product.url }}">
+        {{ product.title }}
+      </a>
+    </h2>
+
+    <span class="product-card__price">
+      {{ product.price | money }}
+    </span>
+  </div>
+</article>

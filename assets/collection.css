@@ -1,0 +1,28 @@
+.collection {
+  min-height: 100vh;
+
+  background: linear-gradient(
+    115deg,
+    #ddd0c1 0%,
+    #e6d1be 20%,
+    #dfcfc0 30%,
+    #ddd0c1 50%,
+    #e4d7c9 68%,
+    #dfd1c3 100%
+  );
+}
+
+.collection__header {
+  min-height: 125px;
+  padding: 48px 40px 48px;
+  margin-top: 137px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.collection__header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}

@@ -4,33 +4,42 @@
 
   https://shopify.dev/docs/storefronts/themes/architecture/templates/collection
 {% endcomment %}
+{{ 'collection.css' | asset_url | stylesheet_tag }}
 
-<h1>{{ collection.title }}</h1>
+<section class="collection full-width">
+  <header
+    class="collection__header"
+    {% if section.settings.image %}
+      style="background-image: url('{{ section.settings.image | image_url: width: 2400 }}');"
+    {% endif %}
+  >
+    <div class="collection__header-content">
+      <span class="collection__eyebrow">The collection</span>
 
-<div class="collection-products">
-  {% paginate collection.products by 20 %}
-    {% for product in collection.products %}
-      <div class="collection-product">
-        {% if product.featured_image %}
-          {% render 'image',
-            class: 'collection-product__image',
-            image: product.featured_image,
-            url: product.url,
-            width: 400,
-            height: 400,
-            crop: 'center'
-          %}
-        {% endif %}
-        <div class="collection-product__content">
-          <p>{{ product.title | escape | link_to: product.url }}</p>
-          <p>{{ product.price | money }}</p>
-        </div>
-      </div>
-    {% endfor %}
+      <h1>Our products</h1>
 
-    {{ paginate | default_pagination }}
-  {% endpaginate %}
-</div>
+      <p>Jewelry designed to become part of your story.</p>
+
+      <nav class="collection__breadcrumb">...</nav>
+    </div>
+  </header>
+
+  <div class="collection__catalog">
+    <aside class="collection__filters">
+      <!-- filtros estáticos por ahora -->
+    </aside>
+
+    <div class="collection__products">
+      {% paginate collection.products by 20 %}
+        {% for product in collection.products %}
+          {% render 'product-card', product: product %}
+        {% endfor %}
+
+        {{ paginate | default_pagination }}
+      {% endpaginate %}
+    </div>
+  </div>
+</section>
 
 {% stylesheet %}
   .collection-products {
@@ -42,6 +51,12 @@
 {% schema %}
 {
   "name": "t:general.collection",
-  "settings": []
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Collection header image"
+    }
+  ]
 }
 {% endschema %}

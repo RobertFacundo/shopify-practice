@@ -4,9 +4,11 @@
 
   https://shopify.dev/docs/storefronts/themes/architecture/templates/collection
 {% endcomment %}
-{{ 'collection.css' | asset_url | stylesheet_tag }}
 
-<section class="collection full-width">
+{{ 'collection.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'collection.js' | asset_url }}" defer></script>
+
+<section class="collection full-width" data-section-id="{{ section.id }}">
   <header
     class="collection__header"
     {% if section.settings.image %}
@@ -30,23 +32,46 @@
     </aside>
 
     <div class="collection__products">
-      {% paginate collection.products by 20 %}
+       {% paginate collection.products by 3 %}
+
+      <div class="collection__toolbar">
+
+        <span class="collection__count">
+          {{ collection.products_count }} products
+        </span>
+
+        <div class="collection__sort">
+          <label for="SortBy">
+            Sort by
+          </label>
+
+          <select id="SortBy">
+            <option value="manual">Featured</option>
+            <option value="price-ascending">Price: Low to high</option>
+            <option value="price-descending">Price: High to low</option>
+            <option value="title-ascending">Alphabetically: A-Z</option>
+            <option value="title-descending">Alphabetically: Z-A</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="collection__products-grid">
+
         {% for product in collection.products %}
           {% render 'product-card', product: product %}
         {% endfor %}
 
+      </div>
+
+      <div class="collection__pagination">
         {{ paginate | default_pagination }}
-      {% endpaginate %}
+      </div>
+
+    {% endpaginate %}
     </div>
   </div>
 </section>
-
-{% stylesheet %}
-  .collection-products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  }
-{% endstylesheet %}
 
 {% schema %}
 {

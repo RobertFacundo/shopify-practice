@@ -38,7 +38,59 @@
 }
 
 .collection__filters {
-  /* filtros */
+  display: flex;
+  flex-direction: column;
+}
+
+.collection__filters::before {
+  content: 'Filter by';
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.filter {
+  margin-bottom: 28px;
+}
+
+.filter h2 {
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.filter__values {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.filter__values label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filter__values input[type='checkbox'] {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  appearance: none;
+  border: 1px solid #222;
+  background: transparent;
+  cursor: pointer;
+}
+
+.filter__values input[type='checkbox']:checked {
+  background: #222;
+  box-shadow: inset 0 0 0 3px #ddd0c1;
 }
 
 .collection__products {
@@ -64,23 +116,24 @@
 .collection__sort {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .collection__sort label {
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .collection__sort select {
-  padding: 8px 30px 8px 4px;
-
+  padding: 6px 28px 6px 2px;
   border: none;
   border-bottom: 1px solid #222;
-
   background: transparent;
-
   font: inherit;
+  font-size: 14px;
   cursor: pointer;
+  outline: none;
 }
 
 .collection__products-grid {

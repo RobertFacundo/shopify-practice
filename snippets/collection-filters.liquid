@@ -1,0 +1,42 @@
+
+{% for filter in collection.filters %}
+  <div class="filter">
+    <h2>{{ filter.label }}</h2>
+
+    <div class="filter__values">
+      {% if filter.type == 'list' %}
+        {% for value in filter.values %}
+          <label>
+            <input
+              type="checkbox"
+              name="{{ value.param_name }}"
+              value="{{ value.value }}"
+              {% if value.active %}
+                checked
+              {% endif %}
+            >
+
+            <span>{{ value.label }}</span>
+            <span>({{ value.count }})</span>
+          </label>
+        {% endfor %}
+
+      {% elsif filter.type == 'price_range' %}
+        <label>
+          <input type="checkbox" data-min="" data-max="20">
+          <span>Under $20</span>
+        </label>
+
+        <label>
+          <input type="checkbox" data-min="30" data-max="50">
+          <span>$30 – $50</span>
+        </label>
+
+        <label>
+          <input type="checkbox" data-min="50" data-max="">
+          <span>Over $50</span>
+        </label>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}

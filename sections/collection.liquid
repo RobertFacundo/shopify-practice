@@ -28,47 +28,27 @@
 
   <div class="collection__catalog">
     <aside class="collection__filters">
-      <!-- filtros estáticos por ahora -->
+      {% render 'collection-filters' %}
     </aside>
 
     <div class="collection__products">
-       {% paginate collection.products by 3 %}
+      {% paginate collection.products by 3 %}
+        <div class="collection__toolbar">
+          <span class="collection__count"> {{ collection.products_count }} products </span>
 
-      <div class="collection__toolbar">
-
-        <span class="collection__count">
-          {{ collection.products_count }} products
-        </span>
-
-        <div class="collection__sort">
-          <label for="SortBy">
-            Sort by
-          </label>
-
-          <select id="SortBy">
-            <option value="manual">Featured</option>
-            <option value="price-ascending">Price: Low to high</option>
-            <option value="price-descending">Price: High to low</option>
-            <option value="title-ascending">Alphabetically: A-Z</option>
-            <option value="title-descending">Alphabetically: Z-A</option>
-          </select>
+          {% render 'collection-sort' %}
         </div>
 
-      </div>
+        <div class="collection__products-grid">
+          {% for product in collection.products %}
+            {% render 'product-card', product: product %}
+          {% endfor %}
+        </div>
 
-      <div class="collection__products-grid">
-
-        {% for product in collection.products %}
-          {% render 'product-card', product: product %}
-        {% endfor %}
-
-      </div>
-
-      <div class="collection__pagination">
-        {{ paginate | default_pagination }}
-      </div>
-
-    {% endpaginate %}
+        <div class="collection__pagination">
+          {{ paginate | default_pagination }}
+        </div>
+      {% endpaginate %}
     </div>
   </div>
 </section>

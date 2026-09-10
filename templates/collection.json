@@ -11,7 +11,9 @@
   "sections": {
     "main": {
       "type": "collection",
-      "settings": {}
+      "settings": {
+        "image": "shopify://shop_images/header-products-ezremove.png"
+      }
     }
   },
   "order": [

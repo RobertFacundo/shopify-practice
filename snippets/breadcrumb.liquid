@@ -1,0 +1,11 @@
+{{ 'breadcrumb.css' | asset_url | stylesheet_tag }}
+
+<div class="breadcrumb">
+  <a href="{{ routes.root_url }}">Home</a>
+
+  <a href="{{ routes.all_products_collection_url }}">Catalog</a>
+
+  {% if template.name == 'product' %}
+    <span>{{ product.title }}</span>
+  {% endif %}
+</div>

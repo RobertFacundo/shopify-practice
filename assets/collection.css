@@ -227,8 +227,8 @@
 @media (max-width: 768px) {
   .collection__catalog {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 24px 20px 80px;
+    gap: 30px;
+    padding: 24px 20px 21px;
   }
 
   .collection__products-grid {
@@ -241,6 +241,16 @@
   }
 
   .collection__pagination {
-    margin-top: 56px;
+    margin-top: 26px;
+    gap: 2px;
+  }
+  .collection__pagination .page a,
+  .collection__pagination .page.current,
+  .collection__pagination .prev a,
+  .collection__pagination .next a {
+    min-width: 22px;
+  }
+  .filter__values {
+    flex-direction: row;
   }
 }

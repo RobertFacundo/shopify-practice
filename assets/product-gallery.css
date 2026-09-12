@@ -48,3 +48,25 @@
   height: 100%;
   object-fit: contain;
 }
+
+@media (max-width: 768px) {
+  .product-gallery {
+    grid-template-columns: 1fr;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .product-gallery__thumbnails {
+    flex-direction: row;
+    margin-left: 0;
+    margin-top: 0;
+    overflow-x: auto;
+    justify-content: center;
+  }
+
+  .product-gallery__thumbnail {
+    flex: 0 0 90px;
+    width: 90px;
+    height: 70px;
+  }
+}

@@ -130,9 +130,9 @@
 @media (max-width: 768px) {
   .product-tabs {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 110px;
 
-    padding: 60px 25px;
+    padding: 20px 15px;
   }
 
   .product-tabs__navigation {
@@ -147,6 +147,8 @@
   }
 
   .product-tabs__visual {
-    min-height: 300px;
+    min-height: 100px;
+    background-color: transparent;
+    margin-top: 20px;
   }
 }

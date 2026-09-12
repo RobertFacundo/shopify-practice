@@ -2,8 +2,6 @@
 const thumbnails = document.querySelectorAll('.product-gallery__thumbnail')
 const mainImage = document.querySelector('.product-gallery__main-image img')
 
-console.log(mainImage)
-
 thumbnails.forEach(thumbnail => {
   thumbnail.addEventListener('click', () => {
     const imageUrl = thumbnail.dataset.imageUrl
@@ -34,4 +32,19 @@ tabs.forEach(tab => {
 
     content.classList.add('active')
   })
+})
+
+//quantity-update
+const plus = document.querySelector('.plus')
+const minus = document.querySelector('.minus')
+const quantity = document.querySelector('.input')
+
+plus.addEventListener('click', () => {
+  quantity.value++
+})
+
+minus.addEventListener('click', () => {
+  if (quantity.value > quantity.min) {
+    quantity.value--
+  }
 })

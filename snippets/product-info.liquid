@@ -1,29 +1,30 @@
-<div class="product-info">
-  <h1>{{ product.title }}</h1>
-  <p class="product-info__price">{{ product.price | money }}</p>
-  <p class="product-info__description">{{ product.description }}</p>
+  <div class="product-info">
+    <h1>{{ product.title }}</h1>
+    <p class="product-info__price">{{ product.price | money }}</p>
+    <p class="product-info__description">{{ product.description }}</p>
 
-  <div class="product-form">
-    {% form 'product', product %}
-      {% assign current_variant = product.selected_or_first_available_variant %}
-      <input type="hidden" name="id" value="{{current_variant.id }}">
+    <div class="product-form">
+      {% form 'product', product %}
+        {% assign current_variant = product.selected_or_first_available_variant %}
+        <input type="hidden" name="id" value="{{current_variant.id }}">
 
-      <div class="product-form__quantity">
-        <span>Quantity</span>
-        <div class="quantity-selector">
-          <button type="button">−</button>
+        <div class="product-form__quantity">
+          <span>Quantity</span>
+          <div class="quantity-selector">
+            <button type="button" class="minus">−</button>
 
-          <input
-            type="number"
-            name="quantity"
-            min="1"
-            value="1"
-          >
+            <input
+              type="number"
+              name="quantity"
+              min="1"
+              value="1"
+              class="input"
+            >
 
-          <button type="button">+</button>
+            <button type="button" class="plus">+</button>
+          </div>
         </div>
-      </div>
-      <button type="submit" class="product-form__submit">Add to cart</button>
-    {% endform %}
+        <button type="submit" class="product-form__submit">Add to cart</button>
+      {% endform %}
+    </div>
   </div>
-</div>

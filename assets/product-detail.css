@@ -25,3 +25,9 @@
   flex-direction: row;
   /* max-height: 390px; */
 }
+
+@media (max-width: 768px) {
+  .product-detail-info {
+    flex-direction: column;
+  }
+}

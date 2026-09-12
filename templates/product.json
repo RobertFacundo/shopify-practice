@@ -11,7 +11,9 @@
   "sections": {
     "main": {
       "type": "product",
-      "settings": {}
+      "settings": {
+        "tabs_image": "shopify://shop_images/producttabimagel.png"
+      }
     }
   },
   "order": [

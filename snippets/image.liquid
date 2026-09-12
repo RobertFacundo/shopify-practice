@@ -17,14 +17,8 @@
   @example
   {% render 'image', image: product.featured_image %}
   {% render 'image', image: product.featured_image, url: product.url %}
-  {% render 'image',
-    class: 'product__image',
-    image: product.featured_image,
-    url: product.url,
-    width: 1200,
-    height: 800,
-    crop: 'center',
-  %}
+  {% render 'image', class: 'product-gallery__thumbnail', image: image, width: 300 %}
+  {% render 'image', class: 'product-gallery__main-image', image: product.featured_image, width: 120 %}
 {% enddoc %}
 
 {% liquid

@@ -4,17 +4,17 @@
 
 {{ 'product-card.css' | asset_url | stylesheet_tag }}
 
-<article class="product-card">
+<a class="product-card" href="{{ product.url }}">
  <div class="product-card__background"></div>
 
-  <a class="product-card__media" href="{{ product.url }}">
+  <div class="product-card__media" >
     {% if product.featured_image %}
       {{ product.featured_image
         | image_url: width: 800
         | image_tag
       }}
     {% endif %}
-  </a>
+  </div>
 
   <div class="product-card__content">
 
@@ -27,4 +27,4 @@
     </span>
 
   </div>
-</article>
+</a>

@@ -1,0 +1,26 @@
+<div class="product-tabs">
+  <div class="product-tabs__main">
+    <div class="product-tabs__navigation">
+      <button class="active" data-tab="description">Description</button>
+      <button data-tab="details">Details</button>
+      <button data-tab="shipping">Shipping & Returns</button>
+    </div>
+
+    <div class="product-tabs__content">
+      <div class="active" data-content="description">
+        {{ product.metafields.custom.description }}
+      </div>
+
+      <div data-content="details">
+        {{ product.metafields.custom.details | newline_to_br }}
+      </div>
+
+      <div data-content="shipping">
+        {{ product.metafields.custom.shipping_returns }}
+      </div>
+    </div>
+  </div>
+  <div class="product-tabs__visual">{% render 'image', image: tabs_image %}</div>
+</div>
+
+

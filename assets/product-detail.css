@@ -1,0 +1,27 @@
+.product-detail {
+  padding-top: 133px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    115deg,
+    #eae1d6 0%,
+    #ede3da 20%,
+    #e2d8ce 30%,
+    #dfd7ce 50%,
+    #e8ddd1 68%,
+    #dbd3cc 100%
+  );
+}
+
+.product-detail-breadcrumb {
+  margin-left: 35px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e3cbb69b;
+  z-index: 10;
+}
+
+.product-detail-info {
+  display: flex;
+  flex-direction: row;
+  /* max-height: 390px; */
+}

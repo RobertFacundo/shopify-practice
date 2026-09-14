@@ -1,0 +1,27 @@
+<div class="cart-item">
+  <div class="cart-item__image">
+    {% render 'image', image: item.image, url: item.url %}
+  </div>
+
+  <div class="cart-item__info">
+    <p class="cart-item__title">{{ item.product.title }}</p>
+
+    <span class="cart-item__price">
+      {{ item.final_price | money }}
+    </span>
+
+    <div class="cart-item__quantity">
+      <button type="button">−</button>
+      <input type="text" name="updates[]" value="{{ item.quantity }}">
+      <button type="button">+</button>
+    </div>
+  </div>
+
+  <div class="cart-item__actions">
+    <span class="cart-item__total">
+      {{ item.final_line_price | money }}
+    </span>
+
+    {{ 'cart.remove' | t | link_to: item.url_to_remove, class: 'cart-item__remove' }}
+  </div>
+</div>

@@ -7,7 +7,8 @@
     #ede6dd 55%,
     #eee6dd 100%
   );
-  margin: 10px 10px;
+  height: 500px;
+  margin: auto 15px;
 }
 
 .cart-summary h1 {

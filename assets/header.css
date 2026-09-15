@@ -126,6 +126,10 @@
   display: none;
 }
 
+.cart-count--hidden {
+  display: none;
+}
+
 @media screen and (max-width: 749px) {
   .header-desktop {
     display: none;

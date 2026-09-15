@@ -1,4 +1,8 @@
-<div class="cart-item">
+<div
+  class="cart-item"
+  data-line="{{ item.index | plus: 1 }}"
+  data-key="{{ item.key }}"
+>
   <div class="cart-item__image">
     {% render 'image', image: item.image, url: item.url %}
   </div>
@@ -11,9 +15,9 @@
     </span>
 
     <div class="cart-item__quantity">
-      <button type="button">−</button>
+      <button type="button" class="quantity-minus">−</button>
       <input type="text" name="updates[]" value="{{ item.quantity }}">
-      <button type="button">+</button>
+      <button type="button" class="quantity-plus">+</button>
     </div>
   </div>
 
@@ -22,6 +26,8 @@
       {{ item.final_line_price | money }}
     </span>
 
-    {{ 'cart.remove' | t | link_to: item.url_to_remove, class: 'cart-item__remove' }}
+    {% assign line = item.index | plus: 1 %}
+
+    {{ 'cart.remove' | t | link_to: item.url_to_remove, class: 'cart-item__remove', data-line: line }}
   </div>
 </div>

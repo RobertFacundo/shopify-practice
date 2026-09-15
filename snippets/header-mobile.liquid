@@ -30,9 +30,7 @@
       {% endif %}
 
       <a href="{{ routes.cart_url }}" aria-label="Cart">
-        {% if cart.item_count > 0 %}
-          <sup>{{ cart.item_count }}</sup>
-        {% endif %}
+         {% render 'cart-count' %}
 
         {{ 'icon-cart.svg' | inline_asset_content }}
       </a>

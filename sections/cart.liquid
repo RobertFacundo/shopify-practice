@@ -24,12 +24,45 @@
       </div>
     </form>
   </div>
-  {% render 'cart-summary' %}
+  {% render 'cart-summary', blocks: section.blocks %}
 </div>
 
 {% schema %}
 {
   "name": "t:general.cart",
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            }
+          ],
+          "default": "truck"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Benefit text"
+        }
+      ]
+    }
+  ],
   "settings": []
 }
 {% endschema %}

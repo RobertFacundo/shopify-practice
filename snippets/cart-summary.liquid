@@ -38,8 +38,20 @@
   </a>
 
   <div class="cart-summary__benefits">
-    <span>✓ Free shipping</span>
-    <span>✓ 30 days returns</span>
-    <span>✓ Sustainable materials</span>
-  </div>
+  {% for block in blocks %}
+    <div class="cart-summary__benefit">
+       <span class="cart-summary__benefit-icon">
+        {% case block.settings.icon %}
+          {% when 'truck' %}
+            {% render 'icon-truck' %}
+          {% when 'check' %}
+            {% render 'icon-check' %}
+          {% when 'leaf' %}
+            {% render 'icon-leaf' %}
+        {% endcase %}
+      </span>
+      <span>{{ block.settings.text }}</span>
+    </div>
+  {% endfor %}
+</div>
 </div>

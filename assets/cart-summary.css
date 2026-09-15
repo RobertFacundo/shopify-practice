@@ -71,12 +71,30 @@
 }
 
 .cart-summary__benefits {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
   margin-top: 40px;
   padding-top: 25px;
   border-top: 1px solid #c9bdb1;
+}
+
+.cart-summary__benefit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 13px;
   color: #5f554d;
+}
+
+.cart-summary__benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cart-summary__benefit-icon svg {
+  width: 28px;
+  height: 28px;
 }

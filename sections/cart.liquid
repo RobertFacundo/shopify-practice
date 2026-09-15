@@ -9,9 +9,10 @@
 {{ 'cart-item.css' |asset_url | stylesheet_tag }}
 {{ 'cart-summary.css' |asset_url | stylesheet_tag }}
 
+
 <script src="{{ 'cart.js' | asset_url }}" defer></script>
 
-<div class="cart-section full-width">
+<div class="cart-section full-width" data-section-id="{{ section.id }}">
   <div class="cart-section-products">
     <div class="cart-header">
       <h1>Your cart</h1>

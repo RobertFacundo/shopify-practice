@@ -39,10 +39,12 @@ function initRemoveButtons () {
 }
 
 function renderCart () {
-  fetch('/?sections=template--28535248683371__main')
+  const cartSection = document.querySelector('.cart-section')
+  const sectionId = cartSection.dataset.sectionId
+  fetch(`/?sections=${sectionId}`)
     .then(response => response.json())
     .then(data => {
-      const html = data['template--28535248683371__main']
+      const html = data[sectionId]
 
       const parser = new DOMParser()
       const doc = parser.parseFromString(html, 'text/html')

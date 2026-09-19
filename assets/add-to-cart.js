@@ -1,4 +1,21 @@
 //cart interception
+function updateCartCount (cart) {
+  const cartCounts = document.querySelectorAll('.cart-count')
+
+  cartCounts.forEach(cartCount => {
+    cartCount.textContent = cart.item_count
+
+    cartCount.classList.toggle('cart-count--hidden', cart.item_count === 0)
+  })
+}
+
+function openCartDrawer () {
+  const cartDrawer = document.querySelector('.cart-drawer')
+  console.log(cartDrawer, 'log del opencartdrawer')
+
+  cartDrawer.classList.add('active')
+}
+
 const form = document.querySelector('.product-form form')
 
 form.addEventListener('submit', e => {
@@ -17,15 +34,9 @@ form.addEventListener('submit', e => {
       fetch('/cart.js')
         .then(response => response.json())
         .then(cart => {
-          const cartCounts = document.querySelectorAll('.cart-count')
-
-          cartCounts.forEach(cartCount => {
-            cartCount.textContent = cart.item_count
-
-            cartCount.classList.toggle(
-              'cart-count--hidden',
-              cart.item_count === 0
-            )
+          updateCartCount(cart)
+          renderCartDrawer().then(() => {
+            openCartDrawer()
           })
         })
     })

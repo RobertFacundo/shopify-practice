@@ -76,10 +76,6 @@ function initQuantityButtons () {
 
       const newQuantity = isPlus ? quantity + 1 : quantity - 1
 
-      console.log('LINE:', line)
-      console.log('CURRENT QUANTITY:', quantity)
-      console.log('NEW QUANTITY:', newQuantity)
-
       changeCartItem(line, newQuantity)
     })
   })

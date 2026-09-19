@@ -1,0 +1,57 @@
+<div class="cart-summary">
+  <h1>Order summary</h1>
+
+  <div class="cart-summary__details">
+    <div class="cart-summary__row">
+      <span>Subtotal</span>
+      <span>{{ cart.total_price | money }}</span>
+    </div>
+
+    <div class="cart-summary__row">
+      <span>Shipping</span>
+      <span>—</span>
+    </div>
+
+    <div class="cart-summary__row">
+      <span>Estimated Tax</span>
+      <span>—</span>
+    </div>
+  </div>
+
+  <div class="cart-summary__total">
+    <span>Total</span>
+    <span>{{ cart.total_price | money }}</span>
+  </div>
+
+  <input
+    class="cart-summary__checkout"
+    type="submit"
+    name="checkout"
+    value="Proceed to Checkout"
+  >
+
+  <a
+    class="cart-summary__continue"
+    href="{{ routes.all_products_collection_url }}"
+  >
+    Continue Shopping
+  </a>
+
+  <div class="cart-summary__benefits">
+  {% for block in blocks %}
+    <div class="cart-summary__benefit">
+       <span class="cart-summary__benefit-icon">
+        {% case block.settings.icon %}
+          {% when 'truck' %}
+            {% render 'icon-truck' %}
+          {% when 'check' %}
+            {% render 'icon-check' %}
+          {% when 'leaf' %}
+            {% render 'icon-leaf' %}
+        {% endcase %}
+      </span>
+      <span>{{ block.settings.text }}</span>
+    </div>
+  {% endfor %}
+</div>
+</div>

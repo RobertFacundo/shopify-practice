@@ -11,6 +11,34 @@
   "sections": {
     "main": {
       "type": "cart",
+      "blocks": {
+        "benefit_XGKNn6": {
+          "type": "benefit",
+          "settings": {
+            "icon": "leaf",
+            "text": "Sustainable materials"
+          }
+        },
+        "benefit_aNkEbN": {
+          "type": "benefit",
+          "settings": {
+            "icon": "check",
+            "text": "30 days returns"
+          }
+        },
+        "benefit_c9HCdA": {
+          "type": "benefit",
+          "settings": {
+            "icon": "truck",
+            "text": "Free shipping"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_XGKNn6",
+        "benefit_aNkEbN",
+        "benefit_c9HCdA"
+      ],
       "settings": {}
     }
   },

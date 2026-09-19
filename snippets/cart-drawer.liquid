@@ -1,0 +1,24 @@
+{{ 'cart-drawer.css' |asset_url | stylesheet_tag }}
+{{ 'cart-drawer-item.css' |asset_url | stylesheet_tag }}
+{{ 'cart-drawer-summary.css' |asset_url | stylesheet_tag }}
+
+<div class="cart-drawer" >
+   <div class="cart-drawer-header">
+    <h1>Your cart</h1>
+
+    <button type="button" class="cart-drawer-close">
+      ×
+    </button>
+  </div>
+
+  <form action="{{ routes.cart_url }}" method="post">
+    <div class="cart-drawer-items">
+      {% for item in cart.items %}
+        {% render 'cart-drawer-item', item: item %}
+      {% endfor %}
+    </div>
+  </form>
+  {% render 'cart-drawer-summary'%}
+</div>
+
+

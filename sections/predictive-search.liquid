@@ -1,0 +1,8 @@
+<div class="predictive-search">
+  {% for product in predictive_search.resources.products %}
+    <a href="{{ product.url }}">
+      {{ product.featured_image | image_url: width: 80 | image_tag }}
+      <span>{{ product.title }}</span>
+    </a>
+  {% endfor %}
+</div>

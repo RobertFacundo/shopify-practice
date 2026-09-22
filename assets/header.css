@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 10;
   background-color: transparent;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .header__background {
@@ -35,7 +35,7 @@
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .header__actions {
@@ -109,13 +109,13 @@
 
 .header__title {
   font-size: 55px;
-  margin-left: 1rem;
+  margin-right: 7rem;
   padding-top: 25px;
 }
 
 .header__title a {
   text-decoration: none;
-  color: rgba(44, 42, 40, 0.882);
+  color: rgba(66, 40, 10, 0.9);
 }
 
 .header-desktop {

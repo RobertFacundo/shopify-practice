@@ -134,3 +134,7 @@
   width: 3rem;
   height: 3rem;
 }
+
+.header-mobile__search {
+  opacity: 0;
+}

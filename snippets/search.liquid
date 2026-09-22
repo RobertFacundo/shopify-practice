@@ -1,0 +1,19 @@
+{{ 'search.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'search.js' | asset_url }}" defer></script>
+
+<form class="search-form" >
+  <input
+    class="search-form__input"
+    type="search"
+    name="q"
+    placeholder="Search"
+  >
+
+  <button
+    class="search-form__button"
+    type="submit"
+  >
+    {{ 'icon-search.svg' | inline_asset_content }}
+  </button>
+   <div class="predictive-search-container"></div>
+</form>

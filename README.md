@@ -1,18 +1,18 @@
-# Shopify Practice — Jewelry Commerce
+# Shopify Practice — Bijou
 
 A custom Shopify storefront built from Shopify's Skeleton Theme to practice and demonstrate professional Shopify theme development.
 
-This project is being developed as a hands-on Shopify learning project, with a focus on theme architecture, ecommerce UX, Shopify APIs, performance, accessibility, and maintainable frontend development.
+This project was developed as a hands-on Shopify learning project, with a focus on theme architecture, ecommerce UX, Shopify APIs, responsive frontend development, and maintainable theme development.
 
-> **Status:** 🚧 In development
+> **Status:** ✅ Completed
 
 ---
 
 ## 🎯 Project Goals
 
-The goal of this project is to build a small but complete Shopify storefront while following a workflow similar to a real-world Shopify development project.
+The goal of this project was to build a complete Shopify storefront while following a workflow similar to a real-world Shopify development project.
 
-The project will explore:
+The project focused on:
 
 * Shopify theme architecture
 * Liquid
@@ -23,18 +23,16 @@ The project will explore:
 * Development stores
 * Responsive design
 * Ecommerce UX
-* Shopify product and collection data
+* Product and collection data
 * Product variants
-* Search and filtering
 * Shopify Cart API
 * Section Rendering API
-* Shopify Storefront API / GraphQL
-* Metafields and metaobjects
-* Third-party integrations
-* Performance
-* Accessibility
-* SEO
+* Predictive Search
+* Vanilla JavaScript
+* GSAP animations
+* IntersectionObserver
 * Git/GitHub workflow
+* Development and production theme workflow
 
 ---
 
@@ -48,10 +46,7 @@ The project will explore:
 * Shopify Theme Editor
 * Shopify Cart API
 * Section Rendering API
-* Storefront API
-* GraphQL
-* Metafields
-* Metaobjects
+* Predictive Search
 
 ### Frontend
 
@@ -59,6 +54,7 @@ The project will explore:
 * CSS
 * JavaScript
 * Liquid templating
+* GSAP
 
 ### Development
 
@@ -66,68 +62,93 @@ The project will explore:
 * GitHub
 * Shopify Development Store
 * Shopify Theme Check
+* Shopify Skeleton Theme
 
 ---
 
-## 🏗️ Planned Storefront
+## 🏪 Storefront
 
-The storefront will be built around a fictional jewelry ecommerce store.
+Bijou is a fictional jewelry ecommerce storefront designed to practice the architecture and development patterns used in Shopify themes.
 
 ### Homepage
 
-Planned sections include:
+Implemented sections include:
 
-* Announcement bar
 * Header
 * Navigation
 * Hero
-* Featured collection
-* Product cards
+* Featured Products
 * Categories
-* Promotional banner
-* Editorial/content section
 * Footer
 
-The homepage will use Shopify sections and schema settings where appropriate so that content can be configured through the Theme Editor.
+The homepage uses Shopify sections, JSON templates, blocks, and Theme Editor settings to make content configurable through Shopify.
 
 ### Collection
 
-Planned functionality:
+Implemented functionality includes:
 
 * Product grid
 * Product cards
-* Filtering
-* Sorting
-* Pagination
+* Collection navigation
 * Responsive layout
-* Empty states
-* Variant handling
 
 ### Product
 
-Planned functionality:
+Implemented functionality includes:
 
-* Product gallery
 * Product information
+* Product image
 * Price
 * Variant selector
 * Quantity selector
 * Add to cart
-* Loading states
-* Error handling
-* Success feedback
+* Dynamic cart count
+* Cart drawer
 
 ### Cart
 
-Planned functionality:
+Implemented functionality includes:
 
+* Cart page
 * Cart drawer
 * Add to cart
 * Update quantity
 * Remove items
-* Cart count
-* Dynamic cart updates
+* Dynamic cart count
+* AJAX cart updates
 * Section Rendering API
+
+### Search
+
+Implemented functionality includes:
+
+* Predictive product search
+* Debounced search requests
+* Shopify Predictive Search
+* Dynamic Liquid rendering
+* Section Rendering
+* Dynamic DOM updates
+* Click-outside behavior
+
+### Animations
+
+The project explores two different animation approaches:
+
+**Hero**
+
+* GSAP
+* CDN integration
+* JavaScript-controlled animation sequences
+
+**Featured Products / Categories**
+
+* IntersectionObserver API
+* Vanilla JavaScript
+* CSS transitions
+* CSS transforms
+* State-based animation classes
+
+This provided practical experience with both third-party animation libraries and native browser APIs.
 
 ---
 
@@ -147,7 +168,7 @@ The project follows Shopify's theme architecture:
 └── templates/
 ```
 
-Some of the main concepts explored throughout the project will include:
+The main architectural relationship explored throughout the project was:
 
 ```text
 layout
@@ -161,54 +182,115 @@ blocks / snippets
 Liquid + HTML + CSS + JavaScript
 ```
 
-The architecture will evolve as the project grows.
+The project also explored the difference between:
+
+* Sections — Shopify-renderable and configurable components
+* Snippets — reusable Liquid markup
+* Templates — page-level structure and configuration
+* Assets — CSS and JavaScript
+* JSON templates — section composition and Theme Editor configuration
 
 ---
 
-## 🔌 APIs & Integrations
+## 🔌 APIs & Shopify Features
 
-APIs and third-party services will only be introduced when they provide a meaningful use case for the storefront.
+The project implemented and explored several Shopify APIs and platform features.
 
-Potential areas of exploration include:
+### Cart API
 
-* Shopify Cart API
-* Section Rendering API
-* Storefront API
-* Shopify GraphQL
-* Product recommendations
-* Search
-* Reviews
-* External ecommerce services
+Used for:
 
-The goal is not to artificially add technologies, but to understand when and why each approach is appropriate.
+* Adding products to the cart
+* Updating quantities
+* Removing products
+* Retrieving cart data
+
+### Section Rendering API
+
+Used to dynamically re-render storefront sections after cart interactions and other AJAX operations.
+
+The project specifically explored how returned HTML can be parsed and inserted into the existing DOM without requiring a full page reload.
+
+### Predictive Search
+
+Implemented using Shopify's Predictive Search endpoint together with Liquid rendering and Section Rendering.
+
+The flow is:
+
+```text
+JavaScript
+    ↓
+Shopify Predictive Search
+    ↓
+Liquid
+    ↓
+Rendered HTML
+    ↓
+JavaScript
+    ↓
+DOM
+```
+
+### Browser APIs
+
+The project also explored the browser's native `IntersectionObserver` API to trigger animations when sections enter the viewport.
+
+---
+
+## 🌿 Git & Development Workflow
+
+The project followed a feature-based Git workflow inspired by professional development environments.
+
+```text
+Feature Branch
+      ↓
+Local Development
+      ↓
+Shopify Development Theme
+      ↓
+Testing
+      ↓
+Pull Request
+      ↓
+Merge into main
+      ↓
+Development Theme
+      ↓
+Final Verification
+      ↓
+Live Theme
+```
+
+Feature branches were used for individual pieces of functionality, with changes reviewed and merged through GitHub before being deployed to the production theme.
 
 ---
 
 ## 📚 Learning Focus
 
-This project is primarily focused on understanding how Shopify development works in a professional environment.
+The main purpose of this project was not simply to create a working storefront.
 
-Particular attention will be given to:
+It was to understand how the different parts of Shopify theme development interact:
 
-* Theme architecture
+* Shopify
 * Liquid
-* Sections vs snippets
-* Theme Editor customization
-* Shopify data models
-* Product variants
-* Collections
-* Shopify filtering
-* AJAX interactions
-* Cart architecture
-* API usage
-* Metafields and metaobjects
-* Performance
-* Accessibility
-* Ecommerce best practices
+* Sections
+* Snippets
+* JSON templates
+* Theme Editor
+* JavaScript
+* DOM manipulation
+* Shopify APIs
+* Section Rendering
+* Browser APIs
+* Third-party libraries
+* Git/GitHub
+* Development and production workflows
+
+Particular attention was given to understanding **when and why** a particular approach should be used instead of simply making the feature work.
 
 ---
 
-## 🚧 Project Roadmap
+## ✅ Project Roadmap
 
 ### Phase 1 — Setup
 
@@ -217,89 +299,86 @@ Particular attention will be given to:
 * [x] Initialize Git repository
 * [x] Create GitHub repository
 * [x] Configure `main` branch
-* [ ] Connect local theme to Development Store
+* [x] Connect local theme to Development Store
 
 ### Phase 2 — Theme Architecture
 
-* [ ] Explore `theme.liquid`
-* [ ] Understand templates
-* [ ] Understand sections
-* [ ] Understand snippets
-* [ ] Understand blocks
-* [ ] Configure global theme settings
+* [x] Explore `theme.liquid`
+* [x] Understand templates
+* [x] Understand sections
+* [x] Understand snippets
+* [x] Understand blocks
+* [x] Configure theme settings
 
 ### Phase 3 — Global UI
 
-* [ ] Announcement bar
-* [ ] Header
-* [ ] Navigation
-* [ ] Mobile navigation
-* [ ] Footer
-* [ ] Global styles
-* [ ] Responsive behavior
+* [x] Header
+* [x] Navigation
+* [x] Responsive behavior
+* [x] Global styles
+* [x] Cart access
 
 ### Phase 4 — Homepage
 
-* [ ] Hero section
-* [ ] Featured collection
-* [ ] Product cards
-* [ ] Category section
-* [ ] Promotional banner
-* [ ] Editorial section
+* [x] Hero section
+* [x] Featured Products
+* [x] Product cards
+* [x] Categories
+* [x] Responsive homepage layout
+* [x] GSAP animations
+* [x] IntersectionObserver animations
 
 ### Phase 5 — Collection
 
-* [ ] Product grid
-* [ ] Filtering
-* [ ] Sorting
-* [ ] Pagination
-* [ ] Empty states
-* [ ] Responsive collection layout
+* [x] Product grid
+* [x] Product cards
+* [x] Responsive collection layout
 
 ### Phase 6 — Product
 
-* [ ] Product gallery
-* [ ] Variant selector
-* [ ] Quantity selector
-* [ ] Add to cart
-* [ ] Loading/error states
+* [x] Product information
+* [x] Product image
+* [x] Variant selector
+* [x] Quantity selector
+* [x] Add to cart
+* [x] Cart feedback
 
 ### Phase 7 — Cart
 
-* [ ] Cart drawer
-* [ ] Add item
-* [ ] Update quantity
-* [ ] Remove item
-* [ ] Cart count
-* [ ] Section Rendering API
+* [x] Cart page
+* [x] Cart drawer
+* [x] Add item
+* [x] Update quantity
+* [x] Remove item
+* [x] Cart count
+* [x] AJAX cart updates
+* [x] Section Rendering API
 
-### Phase 8 — Advanced Shopify
+### Phase 8 — Search
 
-* [ ] Search
-* [ ] Product recommendations
-* [ ] Metafields
-* [ ] Metaobjects
-* [ ] Storefront API
-* [ ] GraphQL
-* [ ] Third-party integration
+* [x] Predictive Search
+* [x] Debouncing
+* [x] Dynamic search results
+* [x] Liquid-rendered results
+* [x] Section Rendering
+* [x] Dynamic DOM updates
 
-### Phase 9 — Production Quality
+### Phase 9 — Production Workflow
 
-* [ ] Accessibility audit
-* [ ] Performance optimization
-* [ ] SEO
-* [ ] Theme Check
-* [ ] Responsive testing
-* [ ] Error handling
-* [ ] Final UX polish
+* [x] Feature branches
+* [x] GitHub Pull Requests
+* [x] Merge workflow
+* [x] Development Theme testing
+* [x] Production Theme deployment
+* [x] Final storefront verification
 
 ---
 
 ## 📌 Project Philosophy
 
-The project is being developed as a guided professional practice rather than a tutorial.
+The project was developed as a guided professional practice rather than a tutorial.
 
-For each feature, the development process will focus on:
+For each feature, the development process followed:
 
 ```text
 Requirement
@@ -317,9 +396,18 @@ Optimization
 Documentation
 ```
 
-When Shopify provides a native solution, it will generally be preferred over recreating the same functionality with unnecessary JavaScript.
+When Shopify provided a native solution, it was generally preferred over recreating the same functionality with unnecessary JavaScript.
 
-The objective is to understand not only **how** to implement Shopify features, but also **when and why** to use each approach.
+The objective was to understand not only **how** to implement Shopify features, but also **when and why** to use each approach.
+
+---
+
+## 🌐 Storefront
+
+**Live Storefront:**
+https://jewelry-commerce-m3gtpdnw.myshopify.com/
+
+**Password:** `rob`
 
 ---
 
@@ -337,4 +425,7 @@ Primary frontend technologies:
 * CSS
 * Tailwind CSS
 
-This project represents a focused exploration of Shopify development and ecommerce frontend engineering.
+This project represents a focused exploration of Shopify theme development and ecommerce frontend engineering.
+
+The next practice project will focus on Shopify concepts that were not explored in Bijou, with the goal of continuing to expand practical knowledge of the Shopify ecosystem.
+

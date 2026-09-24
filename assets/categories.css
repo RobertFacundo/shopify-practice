@@ -89,3 +89,16 @@
     gap: 1.5rem;
   }
 }
+
+/* ANIMATIONS */
+
+.categories__content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.categories.is-visible .categories__content {
+  opacity: 1;
+  transform: translateY(0);
+}

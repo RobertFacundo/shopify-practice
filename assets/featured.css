@@ -130,3 +130,25 @@
     text-align: center;
   }
 }
+
+/* animations */
+.featured__content {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.featured-product-card {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.featured.is-visible .featured__content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.featured.is-visible .featured-product-card {
+  opacity: 1;
+  transform: translateY(0);
+}
